@@ -48,6 +48,7 @@ public class Gestor {
     }
 
 
+
     // CRUD DA CLASSE CONDUTOR
     /**
      * Adiciona um novo condutor à lista.
@@ -107,6 +108,71 @@ public class Gestor {
      */
     public void eliminaCondutor(Condutor condutor) {
         this.condutores.remove(condutor);
+    }
+
+
+    //CRUD DA CLASSE CLIENTE
+
+    /**
+     * Adiciona um novo cliente à lista.
+     *
+     * @param cliente Cliente a ser adicionado
+     */
+
+    public void criarCliente(Cliente cliente) {
+        this.clientes.add(cliente);
+    }
+
+    /**
+     * Devolve a lista completa de Clientes
+     *
+     * @return Lista de clientes.
+     */
+
+    public ArrayList<Cliente> listarClientes() {
+        return this.clientes;
+    }
+
+    /**
+     * Procura o cliente pelo seu NIF
+     *
+     * @param numIdentificacaoFiscal NIF do cliente.
+     * @return Cliente encontrado ou null se não existir.
+     */
+
+    public Cliente proucurarClientePorNif (int numIdentificacaoFiscal){
+        for (Cliente c : this.clientes){
+            if (c.getNumIdentificacaoFiscal() == numIdentificacaoFiscal){
+                return c;
+            }
+        }
+        return null;
+    }
+
+    /**
+     *Atualiza os dados de um cliente existente.
+     *
+     * @param numIdentificacaoFiscal NIF do cliente a atualiar.
+     * @param novosDados Objeto cliente contendo novos dados.
+     * @return true se o condutor foi atualizado; false caso não exista.
+     */
+    public boolean atualizarCliente(int numIdentificacaoFiscal, Cliente novosDados) {
+        for (int i = 0; i < this.clientes.size(); i++) {
+            if (this.clientes.get(i).getNumIdentificacaoFiscal() == numIdentificacaoFiscal) {
+                this.clientes.set(i, novosDados);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Elimina um novo cliente da lista.
+     *
+     * @param cliente Cliente a ser eleminado.
+     */
+    public void eliminaCliente(Cliente cliente) {
+        this.clientes.remove(cliente);
     }
 
 }
