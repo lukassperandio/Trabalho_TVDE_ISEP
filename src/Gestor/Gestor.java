@@ -1,9 +1,6 @@
 package Gestor;
 
-import Modelo.Cliente;
-import Modelo.Condutor;
-import Modelo.Viagem;
-import Modelo.Viatura;
+import Modelo.*;
 
 import java.util.ArrayList;
 
@@ -35,6 +32,11 @@ public class Gestor {
      * Lista de viagens registadas no sistema.
      */
     private ArrayList<Viagem> viagens;
+
+    /**
+     * Lista de reservas registadas no sistema.
+     */
+    private ArrayList<Reserva> reservas;
 
     /**
      * Cria uma nova instância do Gestor, inicializando todas as listas
@@ -173,6 +175,45 @@ public class Gestor {
      */
     public void eliminaCliente(Cliente cliente) {
         this.clientes.remove(cliente);
+    }
+
+
+
+    //CRUD DA CLASSE RESERVA
+    /**
+     * Adiciona uma nova reserva à lista.
+     *
+     * @param reserva Reserva a ser adicionado
+     */
+    public void criarReserva(Reserva reserva) {this.reservas.add(reserva);}{
+
+    }
+
+    /**
+     * Devolve a lista completa de Reservas
+     *
+     * @return Lista de reservas.
+     */
+    public ArrayList<Reserva> listarReservas() {
+        return this.reservas;
+    }
+
+    //CRUD DA CLASSE VIAGEM
+    /**
+     * Adiciona uma nova viagem à lista.
+     *
+     * @param viagem Viagem a ser adicionado
+     */
+    public void criarViagem(Viagem viagem) {this.viagens.add(viagem);}{
+
+    }
+    /**
+     * Devolve a lista completa de Viagens
+     *
+     * @return Lista de viagens.
+     */
+    public ArrayList<Viagem> listarViagem() {
+        return this.viagens;
     }
 
 }

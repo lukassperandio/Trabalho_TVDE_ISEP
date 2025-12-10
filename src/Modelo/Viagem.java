@@ -8,7 +8,7 @@ import java.util.Date;
  * moradas de origem e destino, distância percorrida e custo total.
  */
 public class Viagem {
-
+    private int id;
     private Condutor condutor;
     private Cliente cliente;
     private Viatura viatura;
@@ -22,6 +22,7 @@ public class Viagem {
     /**
      * Cria uma nova instância de Models.Viagem.
      *
+     * @param id             Identificador de viagem.
      * @param condutor       Models.Condutor responsável pela viagem.
      * @param cliente        Models.Cliente transportado.
      * @param viatura        Models.Viatura utilizada na viagem.
@@ -32,9 +33,10 @@ public class Viagem {
      * @param kms            Quilómetros percorridos.
      * @param custoViagem    Custo total da viagem.
      */
-    public Viagem(Condutor condutor, Cliente cliente, Viatura viatura, Date dataInicio, Date dataFim,
+    public Viagem(int id, Condutor condutor, Cliente cliente, Viatura viatura, Date dataInicio, Date dataFim,
                   String moradaOrigem, String moradaDestino, double kms, double custoViagem) {
 
+        this.id = id;
         this.condutor = condutor;
         this.cliente = cliente;
         this.viatura = viatura;
@@ -206,5 +208,14 @@ public class Viagem {
      */
     public void setCustoViagem(double custoViagem) {
         this.custoViagem = custoViagem;
+    }
+
+    /**
+     * Obtém o id da viagem.
+     *
+     * @return id da viagem.
+     */
+    public int getId() {
+        return id;
     }
 }

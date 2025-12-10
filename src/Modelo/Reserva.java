@@ -7,7 +7,7 @@ import java.util.Date;
  * Contém informações sobre o cliente, data da reserva, moradas de origem e destino, e a distância total em quilómetros.
  */
 public class Reserva {
-
+    private int id;
     private Cliente cliente;
     private Date dataReserva;
     private String moradaOrigem;
@@ -17,18 +17,30 @@ public class Reserva {
     /**
      * Cria uma nova instância de Models.Reserva.
      *
+     * @param id             Identificador de reserva.
      * @param cliente        Models.Cliente que realizou a reserva.
      * @param dataReserva    Data em que a reserva foi efetuada.
      * @param moradaOrigem   Local de partida.
      * @param moradaDestino  Local de chegada.
      * @param kms            Distância total da viagem em quilómetros.
      */
-    public Reserva(Cliente cliente, Date dataReserva, String moradaOrigem, String moradaDestino, double kms) {
+    public Reserva(Cliente cliente, Date dataReserva, String moradaOrigem, String moradaDestino, double kms, int id) {
+        this.id = id;
         this.cliente = cliente;
         this.dataReserva = dataReserva;
         this.moradaOrigem = moradaOrigem;
         this.moradaDestino = moradaDestino;
         this.kms = kms;
+    }
+
+    /**
+     * Obtém o id associado à reserva.
+     *
+     * @return id da reserva.
+     */
+    public int getId() {
+
+        return id;
     }
 
     /**
