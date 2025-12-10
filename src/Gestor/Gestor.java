@@ -198,6 +198,15 @@ public class Gestor {
         return this.reservas;
     }
 
+    public Reserva procurarReserva( int id){
+        for (Reserva c : this.reservas){
+            if (c.getId() == id){
+                return c;
+            }
+        }
+        return null;
+    }
+
     //CRUD DA CLASSE VIAGEM
     /**
      * Adiciona uma nova viagem à lista.
@@ -216,4 +225,12 @@ public class Gestor {
         return this.viagens;
     }
 
+    public Viagem procurarViagem( int id){
+        for (Viagem c : this.viagens){
+            if (c.getId() == id){
+                return c;
+            }
+        }
+        return null;
+    }
 }
