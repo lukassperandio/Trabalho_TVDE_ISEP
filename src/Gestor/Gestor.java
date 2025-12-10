@@ -207,6 +207,24 @@ public class Gestor {
         return null;
     }
 
+    /**
+     *Atualiza os dados de uma reserva existente.
+     *
+     * @param id ID da reserva a atualiar.
+     * @param novosDados Objeto Reserva contendo novos dados.
+     * @return true se a reserva foi atualizada; false caso não exista.
+     */
+    public boolean atualizarReserva(int id, Reserva novosDados) {
+        for (int i = 0; i < this.reservas.size(); i++) {
+            if (this.reservas.get(i).getId() == id) {
+                this.reservas.set(i, novosDados);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     //CRUD DA CLASSE VIAGEM
     /**
      * Adiciona uma nova viagem à lista.
@@ -233,4 +251,23 @@ public class Gestor {
         }
         return null;
     }
+
+    /**
+     *Atualiza os dados de uma viagem existente.
+     *
+     * @param id ID da viagem a atualiar.
+     * @param novosDados Objeto Viagem contendo novos dados.
+     * @return true se a viagem foi atualizada; false caso não exista.
+     */
+    public boolean atualizarViagem(int id, Viagem novosDados) {
+        for (int i = 0; i < this.viagens.size(); i++) {
+            if (this.viagens.get(i).getId() == id) {
+                this.viagens.set(i, novosDados);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 }

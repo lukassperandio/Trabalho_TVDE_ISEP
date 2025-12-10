@@ -26,6 +26,7 @@ public class Reserva {
      */
     public Reserva(Cliente cliente, Date dataReserva, String moradaOrigem, String moradaDestino, double kms, int id) {
         this.id = id;
+        this.id = contadorID++;
         this.cliente = cliente;
         this.dataReserva = dataReserva;
         this.moradaOrigem = moradaOrigem;
@@ -42,6 +43,11 @@ public class Reserva {
 
         return id;
     }
+
+    /** Contador estático que garante o auto-incremento do ID.
+    * Cada nova instância da classe recebe um ID único.
+    */
+    private static int contadorID = 1;
 
     /**
      * Obtém o cliente associado à reserva.
